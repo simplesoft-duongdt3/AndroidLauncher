@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import butterknife.BindView;
+import info.awesomedevelopment.tvgrid.library.TVGridView;
 import me.drakeet.multitype.ItemViewBinder;
 import tinyapps.launcher.R;
 import tinyapps.launcher.common.list.RecylcerButterKnifeViewHolder;
@@ -16,10 +17,19 @@ import tinyapps.launcher.common.list.RecylcerButterKnifeViewHolder;
  */
 
 public class AppInfoViewModelBinder extends ItemViewBinder<AppInfoViewModel, AppInfoViewModelBinder.ViewHolder> {
+    private final TVGridView tvGridView;
+
+    public AppInfoViewModelBinder(@NonNull TVGridView tvGridView) {
+        this.tvGridView = tvGridView;
+    }
+
     @NonNull
     @Override
     protected ViewHolder onCreateViewHolder(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
-        return ViewHolder.newInstance(inflater, parent);
+        ViewHolder viewHolder = ViewHolder.newInstance(inflater, parent);
+        viewHolder.itemView.setFocusable(true);
+        viewHolder.itemView.setOnFocusChangeListener(tvGridView::selectView);
+        return viewHolder;
     }
 
     @Override
@@ -37,7 +47,7 @@ public class AppInfoViewModelBinder extends ItemViewBinder<AppInfoViewModel, App
         }
 
         public static ViewHolder newInstance(@NonNull LayoutInflater inflater, @NonNull ViewGroup parent) {
-            return new ViewHolder(inflater, parent, R.layout.app_item_view_holder);
+            return new ViewHolder(inflater, parent, R.layout.item);
         }
     }
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="num_columns">4</integer>
+    <dimen name="recycle_view_padding">28dp</dimen>
+    <dimen name="cell_margin">6dp</dimen>
+
+    <dimen name="cell_corner_radius">3dp</dimen>
+    <dimen name="cell_bottom_margin">3dp</dimen>
+    <dimen name="cell_stroke_width">2dp</dimen>
+
+    <dimen name="text_size">18sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="mlb_placeholder_horizontal">30dp</dimen>
+    <dimen name="mlb_placeholder_horizontal_end">200dp</dimen>
+    <dimen name="mlb_placeholder_vertical">20dp</dimen>
+
+    <dimen name="mlb_lineSpacingTop">5dp</dimen>
+    <dimen name="mlb_lineSpacingBottom">5dp</dimen>
+
+</resources>

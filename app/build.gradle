@@ -62,6 +62,7 @@ dependencies {
     compile 'com.binaryfork:spanny:1.0.4'
     compile "com.zhy:percent-support-extends:1.1.1"
     compile 'me.drakeet.multitype:multitype:3.1.0'
+    compile 'info.awesomedevelopment:tvgrid:1.1.0'
 
     //animation
     compile 'com.daimajia.easing:library:2.0@aar'
