@@ -1,13 +1,16 @@
-package tinyapps.launcher.task;
+package tinyapps.launcher.common.task;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import lombok.Setter;
 import tinyapps.launcher.DataResult;
-import tinyapps.launcher.event.OnActionData;
-import tinyapps.launcher.event.OnWorkingWithException;
+import tinyapps.launcher.common.Util;
+import tinyapps.launcher.common.event.EventFireUtil;
+import tinyapps.launcher.common.event.OnActionData;
+import tinyapps.launcher.common.event.OnWorkingWithException;
 
 /**
  * Created by duongmatheo on 6/9/17.
@@ -18,7 +21,7 @@ public class TaskProcessor<O> {
     private final ITaskManager taskManager;
     @Setter
     private boolean cancelOldTask = true;
-    private BaseBackgroundAsyncTask task;
+    private AsyncTask task;
 
     public TaskProcessor(@NonNull ITaskManager taskManager) {
         this.taskManager = taskManager;
@@ -45,7 +48,7 @@ public class TaskProcessor<O> {
 
     private void checkAndCancelTaskIfNeed() {
         if (cancelOldTask) {
-            FUtils.checkAndCancelTasks(task);
+            Util.checkAndCancelTasks(task);
         }
     }
 }

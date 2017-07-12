@@ -1,4 +1,4 @@
-package tinyapps.launcher.event;
+package tinyapps.launcher.common.event;
 
 import java.io.Serializable;
 

@@ -1,11 +1,13 @@
-package tinyapps.launcher.task;
+package tinyapps.launcher.common.task;
 
 import android.app.Activity;
+import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
 import tinyapps.launcher.DataResult;
-import tinyapps.launcher.event.OnWorkingWithException;
+import tinyapps.launcher.common.event.OnActionData;
+import tinyapps.launcher.common.event.OnWorkingWithException;
 
 /**
  * Created by doanthanhduong on 12/14/16.
@@ -23,19 +25,17 @@ public class DataManagerUtil {
             Log.d("execute error", Log.getStackTraceString(e));
             dataResult.setSuccess(false);
             dataResult.setErrorMsg(e.getMessage());
-            CrashlyticsUtil.logException(e);
-            //dataResult.setErrorMsg(Log.getStackTraceString(e));
         }
         return dataResult;
     }
 
 
-    public static <T> BaseBackgroundAsyncTask requestAsync(ITaskManager taskManager, @NonNull OnWorkingWithException<T> request, OnActionData<DataResult<T>> onDoneEvent) {
+    public static <T> AsyncTask requestAsync(ITaskManager taskManager, @NonNull OnWorkingWithException<T> request, OnActionData<DataResult<T>> onDoneEvent) {
         return requestAsync(taskManager, request, onDoneEvent, true);
     }
 
-    public static <T> BaseBackgroundAsyncTask requestAsync(ITaskManager taskManager, @NonNull OnWorkingWithException<T> request, OnActionData<DataResult<T>> onDoneEvent, boolean executeMulti) {
-        OnAsyncTaskCallBack<DataResult<T>> callback = new OnAsyncTaskCallBack<DataResult<T>>() {
+    public static <T> AsyncTask requestAsync(ITaskManager taskManager, @NonNull OnWorkingWithException<T> request, OnActionData<DataResult<T>> onDoneEvent, boolean executeMulti) {
+        /*OnAsyncTaskCallBack<DataResult<T>> callback = new OnAsyncTaskCallBack<DataResult<T>>() {
 
             @Override
             public void onPostExecute(DataResult<T> dataResult) {
@@ -56,15 +56,16 @@ public class DataManagerUtil {
         } else {
             taskManager.executeTaskSingleMode(task);
         }
-        return task;
+        return task;*/
+        return null;
     }
 
-    public static <T> BaseBackgroundAsyncTask requestAsyncLoading(Activity activity, ITaskManager taskManager, @NonNull OnWorkingWithException<T> request, OnActionData<DataResult<T>> onDoneEvent) {
+    public static <T> AsyncTask requestAsyncLoading(Activity activity, ITaskManager taskManager, @NonNull OnWorkingWithException<T> request, OnActionData<DataResult<T>> onDoneEvent) {
         return requestAsyncLoading(activity, taskManager, request, onDoneEvent, true);
     }
 
-    public static <T> BaseBackgroundAsyncTask requestAsyncLoading(Activity activity, ITaskManager taskManager, @NonNull OnWorkingWithException<T> request, OnActionData<DataResult<T>> onDoneEvent, boolean executeMulti) {
-        OnAsyncTaskCallBack<DataResult<T>> callback = new OnAsyncTaskCallBack<DataResult<T>>() {
+    public static <T> AsyncTask requestAsyncLoading(Activity activity, ITaskManager taskManager, @NonNull OnWorkingWithException<T> request, OnActionData<DataResult<T>> onDoneEvent, boolean executeMulti) {
+        /*OnAsyncTaskCallBack<DataResult<T>> callback = new OnAsyncTaskCallBack<DataResult<T>>() {
 
             @Override
             public void onPostExecute(DataResult<T> dataResult) {
@@ -85,6 +86,7 @@ public class DataManagerUtil {
         } else {
             taskManager.executeTaskSingleMode(task);
         }
-        return task;
+        return task;*/
+        return null;
     }
 }
