@@ -5,7 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import hugo.weaving.DebugLog;
-import tinyapps.launcher.DataResult;
+import tinyapps.launcher.common.DataResult;
 import tinyapps.launcher.common.AppException;
 import tinyapps.launcher.common.event.OnActionData;
 import tinyapps.launcher.common.task.ITaskManager;

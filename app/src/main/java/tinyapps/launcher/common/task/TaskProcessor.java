@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import lombok.Setter;
-import tinyapps.launcher.DataResult;
+import tinyapps.launcher.common.DataResult;
 import tinyapps.launcher.common.Util;
 import tinyapps.launcher.common.event.EventFireUtil;
 import tinyapps.launcher.common.event.OnActionData;

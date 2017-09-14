@@ -5,7 +5,7 @@ import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
-import tinyapps.launcher.DataResult;
+import tinyapps.launcher.common.DataResult;
 import tinyapps.launcher.common.event.OnActionData;
 import tinyapps.launcher.common.event.OnWorkingWithException;
 

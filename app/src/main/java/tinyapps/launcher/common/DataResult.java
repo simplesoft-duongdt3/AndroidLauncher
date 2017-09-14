@@ -1,4 +1,4 @@
-package tinyapps.launcher;
+package tinyapps.launcher.common;
 
 import lombok.Getter;
 import lombok.Setter;
